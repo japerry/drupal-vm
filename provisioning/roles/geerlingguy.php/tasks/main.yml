@@ -71,3 +71,12 @@
   static: no
 - include: configure-fpm.yml
   static: no
+
+# Replace memory limit for cli tools
+- name: Set CLI memory_limit.
+  lineinfile:
+    dest: /etc/php/5.6/cli/php.ini
+    regexp: '^memory_limit'
+    line: 'memory_limit = "{{ php_cli_memory_limit }}"'
+    state: present
+  when: php_cli_memory_limit is defined

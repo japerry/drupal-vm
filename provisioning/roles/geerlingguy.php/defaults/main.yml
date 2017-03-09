@@ -50,6 +50,7 @@ php_use_managed_ini: true
 
 php_expose_php: "On"
 php_memory_limit: "256M"
+php_cli_memory_limit: "768M"
 php_max_execution_time: "60"
 php_max_input_time: "60"
 php_max_input_vars: "1000"
